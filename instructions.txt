@@ -1,0 +1,30 @@
+--------------------------------
+#first step import library
+-----------------------------------
+
+import pygame
+
+-----------------------------------------------------------------------------------
+#Initialize the pygame mixer at the start of your script, before the main loop:
+-----------------------------------------------------------------------------------
+pygame.mixer.init()
+
+---------------------------------------------------
+#Define a function to play the audio for 1 minute:
+--------------------------------------------------
+def play_audio_for_one_minute(audio_file_path):
+    pygame.mixer.music.load(audio_file_path)
+    pygame.mixer.music.play()
+    pygame.time.wait(60000)  # Wait for 1 minute (60000 milliseconds)
+    pygame.mixer.music.stop()
+
+-----------------------------------------
+## Inside the main loop
+----------------------------------------
+if closest_person_details is not None:
+    # ... (your existing code)
+    
+    # Play audio for 1 minute
+    play_audio_for_one_minute("path_to_your_audio_file.mp3")
+    
+    # ... (rest of your existing code)
